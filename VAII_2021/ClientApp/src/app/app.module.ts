@@ -10,12 +10,19 @@ import { HomeComponent } from './home/home.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
+import { HousesComponent } from './houses/houses.component';
+import { ZodiacSignsComponent } from './zodiac-signs/zodiac-signs.component';
+import { PlanetsComponent } from './planets/planets.component';
+import { platform } from 'process';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent
+    HomeComponent,
+    HousesComponent,
+    ZodiacSignsComponent,
+    PlanetsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -23,7 +30,10 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
     FormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' }
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'houses', component: HousesComponent, pathMatch: 'full' },
+      { path: 'zodiac-signs', component: ZodiacSignsComponent, pathMatch: 'full' },
+      { path: 'planets', component: PlanetsComponent, pathMatch: 'full' },
     ])
   ],
   providers: [

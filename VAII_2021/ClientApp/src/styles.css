@@ -9,6 +9,31 @@ code {
   color: #e01a76;
 }
 
+body {
+  background-image: url(../../astroWallpaper.jpg);
+  background-size: cover;
+  color:white;
+}
+
+p {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p span{
+  background-color: rgba(112, 128, 144, 0.5);
+  color:ghostwhite;
+}
+
+li span{
+  background-color: rgba(112, 128, 144, 0.5);
+  color: whitesmoke;
+}
+
+h3 {
+  font-style: italic;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
