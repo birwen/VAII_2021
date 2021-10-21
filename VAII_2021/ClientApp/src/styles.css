@@ -9,15 +9,20 @@ code {
   color: #e01a76;
 }
 
-body {
+.background {
   background-image: url(../../astroWallpaper.jpg);
   background-size: cover;
+}
+
+body {
   color:white;
+  background-color: transparent;
 }
 
 p {
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
 }
 
 p span{
@@ -32,6 +37,7 @@ li span{
 
 h3 {
   font-style: italic;
+  margin: 5px;
 }
 
 .btn-primary {
