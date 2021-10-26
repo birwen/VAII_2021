@@ -8,12 +8,10 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
-import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { HousesComponent } from './houses/houses.component';
 import { ZodiacSignsComponent } from './zodiac-signs/zodiac-signs.component';
 import { PlanetsComponent } from './planets/planets.component';
-import { platform } from 'process';
 
 @NgModule({
   declarations: [
