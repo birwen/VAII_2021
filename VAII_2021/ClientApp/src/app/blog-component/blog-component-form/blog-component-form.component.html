@@ -1,0 +1,18 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="id"
+         [value]="service.blogItem.id" />
+  <input type="hidden" name="date" [value]="service.blogItem.date" />
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control form-control-lg" placeholder="Insert a title here" name="title"
+           #title="ngModel" [(ngModel)]="service.blogItem.title"
+           required [class.invalid]="title.invalid && title.touched"/>
+    <label>Text</label>
+    <input type="text" class="form-control form-control-lg" placeholder="Type your text here..." name="text"
+           #text="ngModel" [(ngModel)]="service.blogItem.text"
+           required [class.invalid]="text.invalid && text.touched"/>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-info btn-lg btn-block" name="save" [disabled]="form.invalid">Submit</button>
+  </div>
+</form>

@@ -48,6 +48,12 @@ export class AuthorizeService {
     return this.getUser().pipe(map(u => !!u));
   }
 
+  public getUserName(): string {
+    var name;
+    this.getUser().subscribe(x => name = x.name);
+    return name;
+  }
+
   public getUser(): Observable<IUser | null> {
     return concat(
       this.userSubject.pipe(take(1), filter(u => !!u)),

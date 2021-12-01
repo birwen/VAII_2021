@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { HousesComponent } from './houses/houses.component';
 import { ZodiacSignsComponent } from './zodiac-signs/zodiac-signs.component';
 import { PlanetsComponent } from './planets/planets.component';
+import { BlogComponentComponent } from './blog-component/blog-component.component';
+import { BlogComponentFormComponent } from './blog-component/blog-component-form/blog-component-form.component';
+import { AuthorizeGuard } from '../api-authorization/authorize.guard';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { PlanetsComponent } from './planets/planets.component';
     HomeComponent,
     HousesComponent,
     ZodiacSignsComponent,
-    PlanetsComponent
+    PlanetsComponent,
+    BlogComponentComponent,
+    BlogComponentFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,6 +37,7 @@ import { PlanetsComponent } from './planets/planets.component';
       { path: 'houses', component: HousesComponent, pathMatch: 'full' },
       { path: 'zodiac-signs', component: ZodiacSignsComponent, pathMatch: 'full' },
       { path: 'planets', component: PlanetsComponent, pathMatch: 'full' },
+      { path: 'blog', component: BlogComponentComponent, canActivate: [AuthorizeGuard] },
     ])
   ],
   providers: [

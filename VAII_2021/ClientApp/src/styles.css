@@ -9,14 +9,9 @@ code {
   color: #e01a76;
 }
 
-.background {
-  background-image: url(../../astroWallpaper.jpg);
-  background-size: cover;
-}
-
 body {
-  color:white;
-  background-color: transparent;
+  color: #001d3d;
+  background-color: #d9dbf11a;
 }
 
 p {
@@ -25,14 +20,12 @@ p {
   margin: 10px;
 }
 
-p span{
-  background-color: rgba(112, 128, 144, 0.5);
-  color:ghostwhite;
+p span {
+  color: #003566;
 }
 
-li span{
-  background-color: rgba(112, 128, 144, 0.5);
-  color: whitesmoke;
+li span {
+  color: #003566;
 }
 
 h3 {
@@ -44,4 +37,8 @@ h3 {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+input.invalid {
+    border-color: red;
 }
