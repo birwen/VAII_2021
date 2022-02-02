@@ -29,8 +29,12 @@ export class BlogComponentService {
     return this.http.put(`${this.baseURL}/${this.blogItem.id}`, this.blogItem);
   }
 
-  deteteServer(id: number) {
+  deleteServer(id: number) {
     return this.http.delete(`${this.baseURL}/${this.blogItem.id}`);
+  }
+
+  editServer(id: number) {
+    return this.http.put(`${this.baseURL}/${this.blogItem.id}`, this.blogItem);
   }
 
   refreshList() {

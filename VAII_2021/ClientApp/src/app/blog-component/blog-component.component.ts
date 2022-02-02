@@ -23,18 +23,28 @@ export class BlogComponentComponent implements OnInit {
     this.service.refreshList();
   }
 
-  populatedForm(selectedRecord: BlogItem) {
+  populateForm(selectedRecord: BlogItem) {
     this.service.blogItem = Object.assign({}, selectedRecord);
   }
 
-  onDelete(id: number) {
+  onDelete() {
     if (confirm('Are you sure to delete this blog?'))
-      this.service.deteteServer(id)
+      this.service.deleteServer(this.service.blogItem.id)
         .subscribe(
           res => {
             this.service.refreshList();
           },
           err => { console.log(err) }
         );
+  }
+
+  onEdit() {
+    this.service.editServer(this.service.blogItem.id)
+      .subscribe(
+        res => {
+          this.service.refreshList();
+        },
+        err => { console.log(err) }
+      );
   }
 }

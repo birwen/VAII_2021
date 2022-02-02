@@ -1,4 +1,3 @@
-import { analyzeFileForInjectables } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BlogComponentService } from '../blog-component.service';

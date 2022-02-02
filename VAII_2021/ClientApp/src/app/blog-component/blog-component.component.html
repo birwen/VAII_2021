@@ -18,17 +18,16 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of service.list">
-          <td (click)="populatedForm(item)">{{item.title}}</td>
+          <td>{{item.title}}</td>
           <td>{{item.text}}</td>
           <td>{{item.userName}}</td>
           <td>{{item.date}}</td>
-          <td class="text-danger">
-            <button type="button" class="btn btn-danger" (click)="onDelete(item.id)">DELETE</button>
+          <td class="col-md-6">
+            <button type="button" class="btn-primary" (click)="onDelete()">DELETE</button>
+            <button type="button" class="btn-primary" (click)="populateForm(item)">EDIT</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-
-
