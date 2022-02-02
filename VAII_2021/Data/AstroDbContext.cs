@@ -14,10 +14,17 @@ namespace VAII_2021.Data
         }
 
         public DbSet<BlogItem> Blogs { get; set; }
+        public DbSet<EshopItem> EshopItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<PaymentDetail> PaymentDetails { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BlogItem>().ToTable("Blogs");
+            modelBuilder.Entity<EshopItem>().ToTable("EshopItems");
+            modelBuilder.Entity<Order>().ToTable("Orders");
+            modelBuilder.Entity<PaymentDetail>().ToTable("PaymentDetails");
         }
     }
 }
